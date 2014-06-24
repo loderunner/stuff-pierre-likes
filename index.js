@@ -5,24 +5,32 @@ var hideAnswer = function() {
     $('#answer-box').addClass('out');
 };
 
+var pierreProcessor = function(w) {
+    var wl = w.toLowerCase();
+
+    // Is it Lua?
+    if(w === 'Lua') {
+        // It's Lua! Pierre likes this.
+        return 'Yes!';
+    }
+
+    else
+    {
+        return 'No.';
+    }
+};
+
 $(document).ready(function() {
     $('#submit').click(function(){
         $('#query').blur();
 
         var query = $('#query')[0].value;
 
-        // Is it Lua?
-        if (query.toLowerCase() === 'Lua') {
-            // It's Lua! Pierre likes this.
-            $('#answer-box').removeClass('out');
-            $('#answer-box').addClass('in');
-            $('#answer').text('Yes!');
-        } else {
-            // It isn't Lua. Pierre is sad.
-            $('#answer-box').removeClass('out');
-            $('#answer-box').addClass('in');
-            $('#answer').text('No.');
-        }
+        var answer = pierreProcessor(query);
+
+        $('#answer-box').removeClass('out');
+        $('#answer-box').addClass('in');
+        $('#answer').text(answer);
     });
 
     $('#query').focus(hideAnswer);
