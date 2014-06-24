@@ -14,6 +14,19 @@ var pierreProcessor = function(w) {
         return 'Yes!';
     }
 
+    // Lua is not LUA...
+    else if(wl === 'lua') {
+        return 'n00b! It\'s "Lua".';
+    }
+
+    else if(wl === 'fsonrpc') {
+        return 'Yes! But not FSON.';
+    }
+
+    else if(wl === 'environment variables') {
+        return 'Yes!';
+    }
+
     else
     {
         return 'No.';
