@@ -12,7 +12,7 @@ $(document).ready(function() {
         var query = $('#query')[0].value;
 
         // Is it Lua?
-        if (query.toLowerCase() === 'lua') {
+        if (query.toLowerCase() === 'Lua') {
             // It's Lua! Pierre likes this.
             $('#answer-box').removeClass('out');
             $('#answer-box').addClass('in');
