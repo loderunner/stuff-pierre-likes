@@ -3,6 +3,11 @@ stuff-pierre-likes
 
 A website to know what Pierre likes.
 
+# Compiling
+
+To regenerate `index.lua.json`, use
+[moonshine distil](http://moonshinejs.org/getting-started/#distil).
+
 # License
 
 ## The Unlicense
