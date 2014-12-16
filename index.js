@@ -26,6 +26,10 @@ var pierreProcessor = function(w) {
     else if(wl === 'environment variables') {
         return 'Yes!';
     }
+    
+    else if(wl === 'valgrind') {
+        return 'It Does Rubbish!';
+    }
 
     else
     {
