@@ -37,17 +37,25 @@ var pierreProcessor = function(w) {
     }
 };
 
+var query = function()
+{
+    $('#query').blur();
+
+    var query = $('#query')[0].value;
+
+    var answer = pierreProcessor(query);
+
+    $('#answer-box').removeClass('out');
+    $('#answer-box').addClass('in');
+    $('#answer').html(answer);
+}
+
 $(document).ready(function() {
-    $('#submit').click(function(){
-        $('#query').blur();
-
-        var query = $('#query')[0].value;
-
-        var answer = pierreProcessor(query);
-
-        $('#answer-box').removeClass('out');
-        $('#answer-box').addClass('in');
-        $('#answer').html(answer);
+    $('#submit').click(query);
+    $('#query').keypress(function(e) {
+        if (e.which == 13) {
+            query();
+        }
     });
 
     $('#query').focus(hideAnswer);
